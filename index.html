@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade predictor</title>
+</head>
+
+<body>
+    <div class="curr-points">
+        <input type="number" id="CFU-pts" placeholder="CFU points">
+        <input type="number" id="RA-pts" placeholder="RA points">
+        <input type="number" id="SA-pts" placeholder="SA points">
+    </div>
+    <br>
+
+    <p>What category are you looking at?</p>
+    <button id="CFU-choice" onclick="categoryClick('CFU')">CFU</button>
+    <button id="RA-choice" onclick="categoryClick('RA')">RA</button>
+    <button id="SA-choice" onclick="categoryClick('SA')">SA</button>
+    <button onclick="reset()">Reset choice</button>
+    <br><br>
+
+    <div class="category-points">
+        <input type="number" id="stu-pts" placeholder="Student points">
+        <input type="number" id="max-pts" placeholder="Max points">
+        <input type="number" id="weight" placeholder="Weight">
+    </div>
+    <br>
+
+    <p>Optional: Want to know what's your final grade with a predicted grade?</p>
+    <input type="number" id="predict" placeholder="Predicted grade">
+    <br><br>
+
+    <button id="submit" onclick="checkSub()">Submit</button>
+
+    <p class="grades" id="A"></p>
+    <p class="grades" id="B"></p>
+    <p class="grades" id="C"></p>
+    <p id="pred-grade"></p>
+
+    <button id="resetAll" onclick="reset('all')">Reset</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
