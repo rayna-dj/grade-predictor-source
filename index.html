@@ -4,44 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>HAC Grade Predictor</title>
 </head>
 
 <body>
-    <div class="curr-points">
-        <input type="number" id="CFU-pts" placeholder="CFU points">
-        <input type="number" id="RA-pts" placeholder="RA points">
-        <input type="number" id="SA-pts" placeholder="SA points">
-    </div>
-    <br>
-
-    <p>What category are you looking at?</p>
-    <button id="CFU-choice" onclick="categoryClick('CFU')">CFU</button>
-    <button id="RA-choice" onclick="categoryClick('RA')">RA</button>
-    <button id="SA-choice" onclick="categoryClick('SA')">SA</button>
-    <button onclick="reset()">Reset choice</button>
+    <ul>
+        <li><img src="bear.png" alt="logo" height="70" width="70"></li>
+        <li id="title"><a href="index.html">Home Access Center Grade Predictor</a></li>
+        <div id="pages" style="float: right;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tutorial.html">Tutorial</a></li>
+        </div>
+    </ul>
     <br><br>
 
-    <div class="category-points">
-        <input type="number" id="stu-pts" placeholder="Student points">
-        <input type="number" id="max-pts" placeholder="Max points">
-        <input type="number" id="weight" placeholder="Weight">
+    <div id="content">
+        <div id="curr-points">
+            <p class="title">Overall Category Points</p>
+            <div class="inputs">
+                <label class="input-name" for="CFU-pts">Check for Understanding points</label>
+                <input type="number" id="CFU-pts" placeholder="0.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="RA-pts">Relevant Applications points</label>
+                <input type="number" id="RA-pts" placeholder="0.00">
+             </div>
+            <div class="inputs">
+                <label class="input-name" for="SA-pts">Summative Assesments points</label>
+                <input type="number" id="SA-pts" placeholder="0.00">
+            </div>
+        </div>
+
+        <p class="title">Choose a category</p>
+        <button class="cat-button" id="CFU-choice" onclick="categoryClick('CFU')">Check for Understanding</button>
+        <button class="cat-button" id="RA-choice" onclick="categoryClick('RA')">Relevant Applications</button>
+        <button class="cat-button" id="SA-choice" onclick="categoryClick('SA')">Summative Assesments</button>
+        <button style="background-color: #1B2048; width: 150px; color: white;" onclick="reset()">Reset choice</button>
+   
+
+        <div id="category-points">
+            <p class="title">Enter the category points</p>
+            <div class="inputs">
+                <label class="input-name" for="stu-pts">Student points</label>
+                <input type="number" id="stu-pts" placeholder="0.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="max-pts">Max points</label>
+                <input type="number" id="max-pts" placeholder="0.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="weight">Weight</label>
+                <input type="number" id="weight" placeholder="00.00">
+            </div>
+        </div>
+        <br>
+
+        <div id="optional">
+            <span class="title" id="opt-title">Optional: Want to know what's your final grade with a predicted grade?</span>
+            <span style="float: right;"><input type="number" id="predict" placeholder="Predicted grade"></span>
+        </div>
+        <br>
+
+        <button id="submit" style="background-color: #B55F20; color: white; width: 250px;" onclick="checkSubmit()">Submit</button>
+
+        <p class="title">Results:</p>
+        <p class="grades" id="A">Submit required fields to see the predictions!</p>
+        <p class="grades" id="B"></p>
+        <p class="grades" id="C"></p>
+        <p id="pred-grade"></p>
+
+        <button id="resetAll" class="cat-button" onclick="reset('all')">Reset</button>
+        <p>Want to calculate final grades? Click here!</p>
     </div>
-    <br>
-
-    <p>Optional: Want to know what's your final grade with a predicted grade?</p>
-    <input type="number" id="predict" placeholder="Predicted grade">
-    <br><br>
-
-    <button id="submit" onclick="checkSub()">Submit</button>
-
-    <p class="grades" id="A"></p>
-    <p class="grades" id="B"></p>
-    <p class="grades" id="C"></p>
-    <p id="pred-grade"></p>
-
-    <button id="resetAll" onclick="reset('all')">Reset</button>
-
-    <script src="script.js"></script>
 </body>
 </html>

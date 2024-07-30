@@ -1,7 +1,6 @@
 //step 1
 const isCurrFilled = () => {
-  var inputs = document.querySelectorAll('.curr-points input');
-
+  var inputs = document.querySelectorAll('#curr-points input');
   for (const input of inputs)
     if (input.value == '') return false;
 
@@ -15,36 +14,26 @@ var saBtn = document.getElementById("SA-choice");
 
 let otherPts;
 function categoryClick(cat) {
+  console.log(isCurrFilled());
   if (isCurrFilled()) {
     let RA = parseFloat(document.getElementById("RA-pts").value);
     let SA = parseFloat(document.getElementById("SA-pts").value);
     let CFU = parseFloat(document.getElementById("CFU-pts").value);
 
-    if (cat == "CFU") {
-      raBtn.disabled = true;
-      saBtn.disabled = true;
+    if (cat == "CFU") 
       otherPts = RA + SA;
-    }
-
-    else if (cat == "RA") {
-      cfuBtn.disabled = true;
-      saBtn.disabled = true;
+    else if (cat == "RA") 
       otherPts = CFU + SA;
-    }
-
-    else {
-      raBtn.disabled = true;
-      cfuBtn.disabled = true;
+    else 
       otherPts = CFU + RA;
-    }
   }
   else
-    alert('all fields are not filled out');
+    alert('Fill the required fields with valid inputs');
 }
 
 //step 3
 const isCatFilled = () => {
-  var inputs = document.querySelectorAll('.category-points input');
+  var inputs = document.querySelectorAll('#category-points input');
 
   for (const input of inputs)
     if (input.value == '') return false;
@@ -58,7 +47,9 @@ let stu;
 let w;
 let pred;
 let goals;
-function checkSub() {
+function checkSubmit() {
+  console.log(isCurrFilled());
+  console.log(isCatFilled());
   if (isCurrFilled() && isCatFilled()) {
     stu = parseFloat(document.getElementById("stu-pts").value);
     max = parseFloat(document.getElementById("max-pts").value);
@@ -67,7 +58,7 @@ function checkSub() {
     calculate();
   }
   else {
-    alert('Fill out the required fields');
+    alert('Fill the required fields with valid inputs');
   }
 }
 
@@ -76,7 +67,7 @@ function calculate() {
 
   goals = document.getElementsByClassName("grades");
   var goal = 89.5;
-  for (let i = 0; i < goals.length; i++) {
+  for (var i = 0; i < goals.length; i++) {
     goals[i].innerHTML = `Minimum grade needed to maintain an ` + goals[i].id + ': ' + getGrade(goal);
     goal -= 10;
   }
@@ -112,4 +103,3 @@ function reset(resetChoice) {
   saBtn.disabled = false;
   cfuBtn.disabled = false;
 }
-

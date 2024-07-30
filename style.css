@@ -1,0 +1,130 @@
+/* nav bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1B2048;
+    top: 0;
+    width: 100%; 
+    position: fixed;
+    height: 60px;
+    border-radius: 0px 0px 10px 10px; 
+}
+  
+li {
+    float: left;
+}
+  
+li a { /*fix font */
+    display: block;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+#title{
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+#pages{
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+/* content */
+#content{
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    margin: 40px;
+}
+
+input{
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: none;
+
+    /* font info */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+button{
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: none;
+
+    /* font info */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    flex-wrap: wrap;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+
+    /* font info */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.title{
+    font-size: 18px;
+}
+
+label {
+    /* display: block; */
+    font: 1rem;
+  
+}
+  
+  input, label {
+    margin: 0.4rem 0;
+    display:block;
+}
+
+.inputs{
+    padding: 10px;
+    display: inline-block 
+}
+
+.input-name{
+    text-align: left;
+    color: #F0924E;
+    font-size:xx-small;
+    margin-left: 10px
+}
+
+#optional{
+    display: inline-flex;
+    padding: 20px;
+}
+
+#opt-title{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cat-button{
+    margin: 10px;
+    width: 250px;
+    background-color: #1B2048;
+    color: white;
+}
